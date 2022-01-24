@@ -8,6 +8,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { FormsModule } from '@angular/forms';
 import { UpdateProductComponent } from './update-product/update-product.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

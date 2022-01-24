@@ -6,6 +6,7 @@
             <th>Product</th>
             <th>Price</th>
             <th>Image URL</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
             <td>{{product.imageURL}}</td>
             <td>
                 <button (click)="updateProduct(product.productId)" class="btn btn-info ">Update</button>
+                <button (click)="deleteProduct(product.productId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
             </td>
         </tr>
     </tbody>
