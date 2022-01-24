@@ -1,4 +1,18 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nac-item">
+            <a routerLink="products" routerLinkActive="active" class="nav-link">Product List</a>
+        </li>
+    </ul>
+</nav>
 <h1 class="test-center">{{title}}</h1>
 <div class="container">
-    <app-product-list></app-product-list>
+    <router-outlet></router-outlet>
 </div>
+<footer class="footer">
+    <div class="cointainer">
+        <span>
+            2022 @Jan Wojdylak
+        </span>
+    </div>
+</footer>

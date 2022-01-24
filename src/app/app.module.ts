@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ApiRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
   ],
   imports: [
     BrowserModule,
+    ApiRoutingModule,
     HttpClientModule
   ],
   providers: [],
