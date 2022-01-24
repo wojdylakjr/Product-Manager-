@@ -1,4 +1,4 @@
-package com.wojdylak.productmanager.Service;
+package com.wojdylak.productmanager.service;
 
 import com.wojdylak.productmanager.exception.ProductNotFoundException;
 import com.wojdylak.productmanager.model.Product;
@@ -26,15 +26,14 @@ public class ProductService {
     }
 
     public Product findProductById(Long id) {
-        return productRepo.findProductById(id).orElseThrow(() -> new ProductNotFoundException("Product by id: " + id + "was not found"));
+        return productRepo.findById(id).orElseThrow(() -> new ProductNotFoundException("Product by id: " + id + "was not found"));
     }
 
-
-    public Product updateProduct(Product product) {
-        return productRepo.save(product);
+    public Product updateProduct(Product newProduct) {
+        return productRepo.save(newProduct);
     }
 
     public void deleteProduct(Long id) {
-        productRepo.deleteProductById(id);
+        productRepo.deleteById(id);
     }
 }

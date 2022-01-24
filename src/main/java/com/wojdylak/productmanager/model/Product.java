@@ -15,17 +15,23 @@ public class Product implements Serializable {
     private String name;
     private BigDecimal price;
     private String imageURL;
-    private Campaign campaign;
+//    private Campaign campaign;
 
     public Product(){}
 
-    public Product(Long productId, String name, BigDecimal price, String imageURL, Campaign campaign) {
-        this.productId = productId;
-        this.name = name;
-        this.price = price;
-        this.imageURL = imageURL;
-        this.campaign = campaign;
-    }
+//    public Product(Long productId, String name, BigDecimal price, String imageURL, Campaign campaign) {
+//        this.productId = productId;
+//        this.name = name;
+//        this.price = price;
+//        this.imageURL = imageURL;
+//        this.campaign = campaign;
+//    }
+public Product(Long productId, String name, BigDecimal price, String imageURL, Campaign campaign) {
+    this.productId = productId;
+    this.name = name;
+    this.price = price;
+    this.imageURL = imageURL;
+}
 
     public Long getProductId() {
         return productId;
@@ -59,22 +65,22 @@ public class Product implements Serializable {
         this.imageURL = imageURL;
     }
 
-    public Campaign getCampaign() {
-        return campaign;
-    }
+//    public Campaign getCampaign() {
+//        return campaign;
+//    }
+//
+//    public void setCampaign(Campaign campaign) {
+//        this.campaign = campaign;
+//    }
 
-    public void setCampaign(Campaign campaign) {
-        this.campaign = campaign;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", imageURL='" + imageURL + '\'' +
-                ", campaign=" + campaign +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Product{" +
+//                "productId=" + productId +
+//                ", name='" + name + '\'' +
+//                ", price=" + price +
+//                ", imageURL='" + imageURL + '\'' +
+//                ", campaign=" + campaign +
+//                '}';
+//    }
 }

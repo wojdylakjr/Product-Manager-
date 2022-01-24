@@ -1,11 +1,10 @@
 package com.wojdylak.productmanager.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Entity
 public class Campaign implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,11 +16,13 @@ public class Campaign implements Serializable {
     private boolean isEnabled;
     private String townName;
     private double radius;
+    @ManyToOne
+    private Product product;
 
     public Campaign() {
     }
 
-    public Campaign(Long campaignID, String name, String keywords, int minAmount, BigDecimal fund, boolean isEnabled, String townName, double radius) {
+    public Campaign(Long campaignID, String name, String keywords, int minAmount, BigDecimal fund, boolean isEnabled, String townName, double radius, Product product) {
         this.campaignID = campaignID;
         this.name = name;
         this.keywords = keywords;
@@ -30,7 +31,9 @@ public class Campaign implements Serializable {
         this.isEnabled = isEnabled;
         this.townName = townName;
         this.radius = radius;
+        this.product = product;
     }
+
 
     public Long getCampaignID() {
         return campaignID;
@@ -96,8 +99,16 @@ public class Campaign implements Serializable {
         this.radius = radius;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     @Override
-    public String  toString() {
+    public String toString() {
         return "Campaign{" +
                 "campaignID=" + campaignID +
                 ", name='" + name + '\'' +
@@ -107,6 +118,7 @@ public class Campaign implements Serializable {
                 ", isEnabled=" + isEnabled +
                 ", townName='" + townName + '\'' +
                 ", radius=" + radius +
+                ", product=" + product +
                 '}';
     }
 }
