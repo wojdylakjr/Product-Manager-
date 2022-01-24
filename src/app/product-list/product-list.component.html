@@ -1,0 +1,19 @@
+<h2>Product List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Image URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.imageURL}}</td>
+        </tr>
+    </tbody>
+</table>
