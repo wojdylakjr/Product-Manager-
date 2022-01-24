@@ -1,0 +1,20 @@
+<div class="col-md-8 offset-md-3">
+    <h3>Create product</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label> Product name</label><br>
+            <input type="text" class="form-controll" id="productName" [(ngModel)]="product.name" name=productName>
+        </div>
+        <div class="form-group">
+            <label> Price </label><br>
+            <input type="number" class="form-controll" id="price" [(ngModel)]="product.price" name=price>
+        </div>
+        <div class="form-group">
+            <label> Image URL</label><br>
+            <input type="text" class="form-controll" id="imageURL" [(ngModel)]="product.imageURL" name=imageURL>
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+
+</div>

@@ -26,7 +26,7 @@ public class Product implements Serializable {
 //        this.imageURL = imageURL;
 //        this.campaign = campaign;
 //    }
-public Product(Long productId, String name, BigDecimal price, String imageURL, Campaign campaign) {
+public Product(Long productId, String name, BigDecimal price, String imageURL) {
     this.productId = productId;
     this.name = name;
     this.price = price;
