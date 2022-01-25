@@ -35,4 +35,13 @@ export class ProductListComponent implements OnInit {
       this.getProducts();
     });
   }
+
+  addCampaign(productId:number){
+    this.router.navigate(['create-campaign', productId])
+  }
+
+
+  campaignList(productId:number){
+    this.router.navigate(['list-campaigns', productId]);
+  }
 }

@@ -7,6 +7,9 @@ import { ApiRoutingModule } from './app-routing.module';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { CampaignListComponent } from './campaign-list/campaign-list.component';
+import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
+
 
 
 @NgModule({
@@ -14,7 +17,9 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     AppComponent,
     ProductListComponent,
     CreateProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    CampaignListComponent,
+    CreateCampaignComponent,
   ],
   imports: [
     BrowserModule,

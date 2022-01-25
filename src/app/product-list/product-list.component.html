@@ -18,6 +18,9 @@
             <td>
                 <button (click)="updateProduct(product.productId)" class="btn btn-info ">Update</button>
                 <button (click)="deleteProduct(product.productId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button (click)="campaignList(product.productId)" class="btn btn-info" style="margin-left: 10px;">Campaigns</button>
+                <button (click)="addCampaign(product.productId)" class="btn btn-info" style="margin-left: 10px;">Add campaign</button>
+                <!-- <button (click)="deleteCampaign(product.productId)" class="btn btn-danger" style="margin-left: 10px;">Delete campaign</button> -->
             </td>
         </tr>
     </tbody>

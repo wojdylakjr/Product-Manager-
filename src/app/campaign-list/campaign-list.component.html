@@ -1,0 +1,35 @@
+<h2>Campaigns List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Keywords</th>
+            <th>Min Amount</th>
+            <th>Funds</th>
+            <th>Status</th>
+            <th>City</th>
+            <th>Radius</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let campaign of campaigns">
+            <td>{{campaign.campaignID}}</td>
+            <td>{{campaign.name}}</td>
+            <td>{{campaign.keywords}}</td>
+            <td>{{campaign.minAmount}}</td>
+            <td>{{campaign.fund}}</td>
+            <td>{{campaign.isEnabled}}</td>
+            <td>{{campaign.townName}}</td>
+            <td>{{campaign.radius}}</td>
+            <td>
+                <!-- <button (click)="updateProduct(product.productId)" class="btn btn-info ">Update</button>
+                <button (click)="deleteProduct(product.productId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button (click)="campaignList(product.productId)" class="btn btn-info" style="margin-left: 10px;">Campaigns</button>
+                <button (click)="addCampaign(product.productId)" class="btn btn-info" style="margin-left: 10px;">Add campaign</button> -->
+                <button (click)="deleteCampaign(campaign.campaignID)" class="btn btn-danger" style="margin-left: 10px;">Delete campaign</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
