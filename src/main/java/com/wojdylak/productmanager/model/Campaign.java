@@ -17,14 +17,15 @@ public class Campaign implements Serializable {
     private String townName;
     private double radius;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "productId", nullable = false)
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "productId")
     private Product product;
 
     public Campaign() {
     }
 
-    public Campaign(Long campaignID, String name, String keywords, int minAmount, BigDecimal fund, boolean isEnabled, String townName, double radius, Product product) {
+
+  public Campaign(Long campaignID, String name, String keywords, int minAmount, BigDecimal fund, boolean isEnabled, String townName, double radius, Product product) {
         this.campaignID = campaignID;
         this.name = name;
         this.keywords = keywords;

@@ -32,12 +32,12 @@ public class CampaignService {
     }
 
     public List<Campaign> findAllCampaigns(){
-      List<Product> products = productRepo.findAll();
-      List<Campaign> campaigns = new ArrayList<>();
-      for(Product product:products){
-        List<Campaign> campaignsInProduct = product.getCampaigns();
-        campaigns.addAll(campaignsInProduct);
-      }
+      List<Campaign> campaigns = campaignRepo.findAll();
+//      List<Campaign> campaigns = new ArrayList<>();
+//      for(Product product:products){
+//        List<Campaign> campaignsInProduct = product.getCampaigns();
+//        campaigns.addAll(campaignsInProduct);
+//      }
 
         return campaigns;
     }

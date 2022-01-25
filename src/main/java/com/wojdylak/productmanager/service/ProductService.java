@@ -51,7 +51,6 @@ public class ProductService {
   public List<Campaign> getCampaignsFromProduct(Long productId) {
 
     Product product = this.findProductById(productId);
-//    product.getCampaigns();
     return product.getCampaigns();
   }
 

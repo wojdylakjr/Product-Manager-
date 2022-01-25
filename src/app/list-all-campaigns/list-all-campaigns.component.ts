@@ -16,7 +16,7 @@ export class ListAllCampaignsComponent implements OnInit {
 
     this.campaignService.getAllCampaignsList().subscribe(data => {
       console.log(data);
-      this.campaigns = data;
+        this.campaigns = data;
     }, error => console.log(error));
   }
 
