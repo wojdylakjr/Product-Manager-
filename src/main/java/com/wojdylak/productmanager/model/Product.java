@@ -19,7 +19,7 @@ public class Product implements Serializable {
   private String imageURL;
 
   @JsonIgnore
-@OneToMany(mappedBy = "product", fetch = FetchType.LAZY,
+@OneToMany(mappedBy = "product",
   cascade = CascadeType.ALL)
   private List<Campaign> campaigns = new ArrayList<>();
 

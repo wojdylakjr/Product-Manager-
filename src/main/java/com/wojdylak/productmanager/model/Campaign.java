@@ -17,7 +17,7 @@ public class Campaign implements Serializable {
     private String townName;
     private double radius;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(name = "productId")
     private Product product;
 
