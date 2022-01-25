@@ -19,30 +19,30 @@ public class CampaignService {
         this.campaignRepo = campaignRepo;
     }
 
-//    public Campaign addCampaign(Campaign campaign){
-//        return campaignRepo.save(campaign);
-//    }
-//
-//    public List<Campaign> findAllCampaigns(){
-//        return campaignRepo.findAll();
-//    }
-//
-//    public Campaign findCampaignById(Long id){
-//        return campaignRepo.findById(id).orElseThrow(()-> new CamapaignNotFoundException("Campaign by id" + id+" was not found"));
-//    }
-
-    public List<Campaign> getAllCampaignsByProductId(Long productId){
-        //        campaignRepo.findByProductId(productId).forEach(campaigns::add);
-        return new ArrayList<>(campaignRepo.findByProductId(productId));
+    public Campaign addCampaign(Campaign campaign){
+        return campaignRepo.save(campaign);
     }
 
-//    public Campaign updateCampaign(Campaign campaign){
-//        return campaignRepo.save(campaign);
+    public List<Campaign> findAllCampaigns(){
+        return campaignRepo.findAll();
+    }
+
+    public Campaign findCampaignById(Long id){
+        return campaignRepo.findById(id).orElseThrow(()-> new CamapaignNotFoundException("Campaign by id" + id+" was not found"));
+    }
+
+//    public List<Campaign> getAllCampaignsByProductId(Long productId){
+//        //        campaignRepo.findByProductId(p bn  roductId).forEach(campaigns::add);
+//        return new ArrayList<>(campaignRepo.findByProductId(productId));
 //    }
-//
-//    public void deleteCampaign(Long id){
-//        campaignRepo.deleteById(id);
-//    }
+
+    public Campaign updateCampaign(Campaign campaign){
+        return campaignRepo.save(campaign);
+    }
+
+    public void deleteCampaign(Long id){
+        campaignRepo.deleteById(id);
+    }
 
 //    public Campaign findCampaignByIdInProductId(Long id, Long productId) {
 //        return campaignRepo.findCampaignByIdInProductId(id,productId).orElseThrow(()-> new CamapaignNotFoundException("Campaign by id" + id+" was not found"));

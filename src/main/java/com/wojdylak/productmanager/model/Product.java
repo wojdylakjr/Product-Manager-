@@ -1,69 +1,84 @@
 package com.wojdylak.productmanager.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Product implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
-    private String name;
-    private BigDecimal price;
-    private String imageURL;
-//    private Campaign campaign;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long productId;
+  private String name;
+  private BigDecimal price;
+  private String imageURL;
 
-    public Product(){}
+  @JsonIgnore
+@OneToMany(mappedBy = "product", fetch = FetchType.LAZY,
+  cascade = CascadeType.ALL)
+  private List<Campaign> campaigns = new ArrayList<>();
 
-//    public Product(Long productId, String name, BigDecimal price, String imageURL, Campaign campaign) {
-//        this.productId = productId;
-//        this.name = name;
-//        this.price = price;
-//        this.imageURL = imageURL;
-//        this.campaign = campaign;
-//    }
-public Product(Long productId, String name, BigDecimal price, String imageURL) {
+  public Product() {
+  }
+
+
+  public Product(Long productId, String name, BigDecimal price, String imageURL) {
     this.productId = productId;
     this.name = name;
     this.price = price;
     this.imageURL = imageURL;
-}
 
-    public Long getProductId() {
-        return productId;
-    }
+  }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+  public Long getProductId() {
+    return productId;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setProductId(Long productId) {
+    this.productId = productId;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
+  public BigDecimal getPrice() {
+    return price;
+  }
 
-    public String getImageURL() {
-        return imageURL;
-    }
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
+  public String getImageURL() {
+    return imageURL;
+  }
+
+  public void setImageURL(String imageURL) {
+    this.imageURL = imageURL;
+  }
+
+
+  public List<Campaign> getCampaigns() {
+    return campaigns;
+  }
+
+  public void setCampaigns(List<Campaign> campaigns) {
+    this.campaigns = campaigns;
+  }
+
+  public void assignCampaign(Campaign campaign) {
+    campaigns.add(campaign);
+  }
 
 //    public Campaign getCampaign() {
 //        return campaign;

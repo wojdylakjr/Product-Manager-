@@ -16,7 +16,9 @@ public class Campaign implements Serializable {
     private boolean isEnabled;
     private String townName;
     private double radius;
-    @ManyToOne
+
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "productId", nullable = false)
     private Product product;
 
     public Campaign() {

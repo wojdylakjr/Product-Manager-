@@ -1,12 +1,14 @@
 package com.wojdylak.productmanager.service;
 
 import com.wojdylak.productmanager.exception.ProductNotFoundException;
+import com.wojdylak.productmanager.model.Campaign;
 import com.wojdylak.productmanager.model.Product;
 import com.wojdylak.productmanager.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ProductService {
@@ -36,4 +38,28 @@ public class ProductService {
     public void deleteProduct(Long id) {
         productRepo.deleteById(id);
     }
+
+    //campaigns
+
+  public Product addCampaignToProduct(Long productId, Campaign campaign) {
+      Product product = this.findProductById(productId);
+      campaign.setProduct(product);
+      product.assignCampaign(campaign);
+      return productRepo.save(product);
+  }
+
+  public List<Campaign> getCampaignsFromProduct(Long productId) {
+
+    Product product = this.findProductById(productId);
+//    product.getCampaigns();
+    return product.getCampaigns();
+  }
+
+
+//  public Product deleteProductFromProduct(Long productId, Long campaignId) {
+//    Product product = this.findProductById(productId);
+//    campaign.setProduct(product);
+//    product.assignCampaign(campaign);
+//    return productRepo.save(product);
+//  }
 }

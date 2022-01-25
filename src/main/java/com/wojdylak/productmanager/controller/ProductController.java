@@ -1,5 +1,7 @@
-package com.wojdylak.productmanager;
+package com.wojdylak.productmanager.controller;
 
+import com.wojdylak.productmanager.model.Campaign;
+import com.wojdylak.productmanager.service.CampaignService;
 import com.wojdylak.productmanager.service.ProductService;
 import com.wojdylak.productmanager.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +10,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class ProductController {
     private ProductService productService;
+  private CampaignService campaignService;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService,CampaignService campaignService) {
         this.productService = productService;
+        this.campaignService = campaignService;
     }
 
     public ProductController() {
@@ -43,7 +48,6 @@ public class ProductController {
     public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("id")Long id){
         Product updatedProduct = productService.updateProduct(product);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
-
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/products/{id}")
@@ -51,5 +55,24 @@ public class ProductController {
         productService.deleteProduct(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    //campaigns
+
+    @RequestMapping("/products/{productId}/campaigns")
+    public ResponseEntity<List<Campaign>> getCampaignsFromProduct(@PathVariable("productId") Long productId) {
+//      Product product = productService.findProductById(productId);
+      List<Campaign> campaigns= productService.getCampaignsFromProduct(productId);
+//      product.getCampaigns(campaign);
+      return new ResponseEntity<>(campaigns, HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/products/{productId}/campaigns")
+    public ResponseEntity<Campaign> addCampaignToProduct(@RequestBody Campaign campaign, @PathVariable("productId") Long productId) {
+      Product product = productService.addCampaignToProduct(productId, campaign);
+      return new ResponseEntity<>(campaign, HttpStatus.OK);
+    }
+
+ 
+
 
 }
