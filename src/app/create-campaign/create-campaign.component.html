@@ -18,9 +18,15 @@
             <label> Funds</label><br>
             <input type="number" class="form-controll" id="campaignFund" [(ngModel)]="campaign.fund" name=campaignFund>
         </div>
+
+        <!-- TODO: Naprawic to -->
         <div class="form-group">
             <label> Status</label><br>
-            <input type="text" class="form-controll" id="campaignIsEnabled" [(ngModel)]="campaign.isEnabled" name=campaignIsEnabled>
+            <select class="form-controll" id="campaignIsEnabled" [(ngModel)]="campaign.isEnabled" name=campaignIsEnabled>
+                <option value="true">On</option>
+                <option value="false">Off</option>
+            </select>
+            <!-- <input type="text" class="form-controll" id="campaignIsEnabled" [(ngModel)]="campaign.isEnabled" name=campaignIsEnabled> -->
         </div>
         <div class="form-group">
             <label> City</label><br>
