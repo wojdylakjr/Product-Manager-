@@ -27,7 +27,7 @@ public class CampaignController {
 
 
   @RequestMapping("/campaigns")
-  public ResponseEntity<List<Campaign>> getAllCampaigns(@PathVariable Long id) {
+  public ResponseEntity<List<Campaign>> getAllCampaigns() {
     List<Campaign> campaigns = campaignService.findAllCampaigns();
     return new ResponseEntity<>(campaigns, HttpStatus.OK);
   }

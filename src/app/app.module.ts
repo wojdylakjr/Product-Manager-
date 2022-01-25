@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { CampaignListComponent } from './campaign-list/campaign-list.component';
 import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
+import { ListAllCampaignsComponent } from './list-all-campaigns/list-all-campaigns.component';
 
 
 
@@ -20,6 +21,7 @@ import { CreateCampaignComponent } from './create-campaign/create-campaign.compo
     UpdateProductComponent,
     CampaignListComponent,
     CreateCampaignComponent,
+    ListAllCampaignsComponent,
   ],
   imports: [
     BrowserModule,

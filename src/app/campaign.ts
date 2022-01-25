@@ -1,3 +1,5 @@
+import { Product } from "./product";
+
 export class Campaign {
     campaignID: number;
     name: String;
@@ -7,5 +9,6 @@ export class Campaign {
     isEnabled: boolean;
     townName: String;
     radius: number;
+    product: Product
 
 }

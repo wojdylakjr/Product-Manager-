@@ -3,6 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 import { CampaignListComponent } from "./campaign-list/campaign-list.component";
 import { CreateCampaignComponent } from "./create-campaign/create-campaign.component";
 import { CreateProductComponent } from "./create-product/create-product.component";
+import { ListAllCampaignsComponent } from "./list-all-campaigns/list-all-campaigns.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { UpdateProductComponent } from "./update-product/update-product.component";
 
@@ -13,7 +14,8 @@ const routes: Routes = [
     {path:'', redirectTo: 'products',pathMatch:'full'},
     {path: 'update-product/:id', component: UpdateProductComponent},
     {path: 'list-campaigns/:productId', component: CampaignListComponent},
-    {path: 'create-campaign/:productId', component: CreateCampaignComponent}
+    {path: 'create-campaign/:productId', component: CreateCampaignComponent},
+    {path: 'listAll-campaigns', component: ListAllCampaignsComponent}
 ];
 
 @NgModule({

@@ -17,7 +17,9 @@ export class CampaignService {
   getCampaignList(productId:number): Observable<Campaign[]>{
     return this.httpClient.get<Campaign[]>(`${this.baseUrl}/${productId}/${this.campaignsUrl}`);
   }
-
+  getAllCampaignsList(): Observable<Campaign[]>{
+    return this.httpClient.get<Campaign[]>(`http://localhost:8080/campaigns`);
+  }
   createCampaign(campaign: Campaign, productId:number): Observable<any>{
     return this.httpClient.post(`${this.baseUrl}/${productId}/${this.campaignsUrl}`,campaign);
   }
