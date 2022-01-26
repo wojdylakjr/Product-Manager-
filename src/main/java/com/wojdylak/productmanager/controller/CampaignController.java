@@ -38,7 +38,7 @@ public class CampaignController {
     return new ResponseEntity<>(newCampaign, HttpStatus.CREATED);
   }
 
-  @RequestMapping(method = RequestMethod.DELETE, value = "/products/{productId}/campaigns/{campaignId}")
+  @RequestMapping(method = RequestMethod.DELETE, value = "/campaigns/{campaignId}")
   public ResponseEntity<Campaign> assignCampaignToProduct(@PathVariable("campaignId") Long campaignId) {
     campaignService.deleteCampaign(campaignId);
     return new ResponseEntity<>(HttpStatus.OK);

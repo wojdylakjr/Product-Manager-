@@ -6,6 +6,7 @@ import { CreateProductComponent } from "./create-product/create-product.componen
 import { ListAllCampaignsComponent } from "./list-all-campaigns/list-all-campaigns.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { UpdateProductComponent } from "./update-product/update-product.component";
+import {AddCampaignComponent} from "./add-campaign/add-campaign.component"
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path: 'update-product/:id', component: UpdateProductComponent},
     {path: 'list-campaigns/:productId', component: CampaignListComponent},
     {path: 'create-campaign/:productId', component: CreateCampaignComponent},
-    {path: 'listAll-campaigns', component: ListAllCampaignsComponent}
+    {path: 'listAll-campaigns', component: ListAllCampaignsComponent},
+    {path: 'add-campaign', component: AddCampaignComponent}
 ];
 
 @NgModule({

@@ -39,11 +39,15 @@ export class CampaignListComponent implements OnInit {
   // }
 
   deleteCampaign(id: number){
-    this.campaignService.deleteCampaign(this.productId,id).subscribe(data =>{
+    this.campaignService.deleteCampaign(id).subscribe(data =>{
       console.log(data);
       this.ngOnInit();
     });
   }
+  addCampaign(productId:number){
+    this.router.navigate(['create-campaign', productId])
+  }
+  
 
   // addCampaign(id:number){}
   // deleteCampaign(id:number){}

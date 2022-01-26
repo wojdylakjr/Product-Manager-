@@ -22,10 +22,10 @@ export class ListAllCampaignsComponent implements OnInit {
 
 
 
-  // deleteCampaign(id: number){
-  //   this.campaignService.deleteCampaign(id).subscribe(data =>{
-  //     console.log(data);
-  //     this.ngOnInit();
-  //   });
-  // }
+  deleteCampaign(id: number){
+    this.campaignService.deleteCampaign(id).subscribe(data =>{
+      console.log(data);
+      this.ngOnInit();
+    });
+  }
 }

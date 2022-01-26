@@ -11,22 +11,25 @@ export class CampaignService {
 
 
   private baseUrl="http://localhost:8080/products";
-  private campaignsUrl = "campaigns"
+  private campaigns = "campaigns"
   constructor(private httpClient: HttpClient ) { }
 
   getCampaignList(productId:number): Observable<Campaign[]>{
-    return this.httpClient.get<Campaign[]>(`${this.baseUrl}/${productId}/${this.campaignsUrl}`);
+    return this.httpClient.get<Campaign[]>(`${this.baseUrl}/${productId}/${this.campaigns}`);
   }
   getAllCampaignsList(): Observable<Campaign[]>{
     return this.httpClient.get<Campaign[]>(`http://localhost:8080/campaigns`);
   }
   createCampaign(campaign: Campaign, productId:number): Observable<any>{
-    return this.httpClient.post(`${this.baseUrl}/${productId}/${this.campaignsUrl}`,campaign);
+    return this.httpClient.post(`${this.baseUrl}/${productId}/${this.campaigns}`,campaign);
   }
 
- 
-  deleteCampaign(productId:number, campaignId:number):Observable<Object>{
-    return this.httpClient.delete<Campaign>(`${this.baseUrl}/${productId}/campaigns/${campaignId}`);
+  addCampaign(campaign: Campaign): Observable<any>{
+    return this.httpClient.post(`http://localhost:8080/campaigns`,campaign);
+  }
+
+  deleteCampaign(campaignId:number):Observable<Object>{
+    return this.httpClient.delete<Campaign>(`http://localhost:8080/campaigns/${campaignId}`);
   }
 
   // getCampaignById(id:number):Observable<Campaign>{

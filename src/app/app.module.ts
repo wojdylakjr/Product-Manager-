@@ -10,6 +10,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { CampaignListComponent } from './campaign-list/campaign-list.component';
 import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
 import { ListAllCampaignsComponent } from './list-all-campaigns/list-all-campaigns.component';
+import { AddCampaignComponent } from './add-campaign/add-campaign.component';
 
 
 
@@ -22,6 +23,7 @@ import { ListAllCampaignsComponent } from './list-all-campaigns/list-all-campaig
     CampaignListComponent,
     CreateCampaignComponent,
     ListAllCampaignsComponent,
+    AddCampaignComponent,
   ],
   imports: [
     BrowserModule,

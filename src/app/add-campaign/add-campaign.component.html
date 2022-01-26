@@ -1,0 +1,44 @@
+<div class="text-center">
+    <h3>Create campaign</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label> Camapign name</label><br>
+            <input type="text" class="form-controll" id="campaignName" [(ngModel)]="campaign.name" name=campaignName>
+        </div>
+        <div class="form-group">
+            <label>Keywords</label><br>
+            <input type="text" class="form-controll" id="campaignKeywords" [(ngModel)]="campaign.keywords" name=campaignKeywords>
+        </div>
+
+        <div class="form-group">
+            <label> Min amount</label><br>
+            <input type="number" class="form-controll" id="campaignMinAmount" [(ngModel)]="campaign.minAmount" name=campaignMinAmount>
+        </div>
+        <div class="form-group">
+            <label> Funds</label><br>
+            <input type="number" class="form-controll" id="campaignFund" [(ngModel)]="campaign.fund" name=campaignFund>
+        </div>
+
+        <!-- TODO: Naprawic to -->
+        <div class="form-group">
+            <label> Status</label><br>
+            <select class="form-controll" id="campaignIsEnabled" [(ngModel)]="campaign.isEnabled" name=campaignIsEnabled>
+                <option value="true">On</option>
+                <option value="false">Off</option>
+            </select>
+            <!-- <input type="text" class="form-controll" id="campaignIsEnabled" [(ngModel)]="campaign.isEnabled" name=campaignIsEnabled> -->
+        </div>
+        <div class="form-group">
+            <label> City</label><br>
+            <input type="text" class="form-controll" id="campaignTownName" [(ngModel)]="campaign.townName" name=campaignTownName>
+        </div>
+        <div class="form-group">
+            <label>Radius</label><br>
+            <input type="number" class="form-controll" id="campaignRadius" [(ngModel)]="campaign.radius" name=campaignRadius>
+        </div>
+
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+
+</div>
