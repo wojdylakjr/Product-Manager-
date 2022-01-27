@@ -12,40 +12,40 @@ import java.util.Set;
 
 @Service
 public class ProductService {
-    private final ProductRepo productRepo;
+  private final ProductRepo productRepo;
 
-    @Autowired
-    public ProductService(ProductRepo productRepo) {
-        this.productRepo = productRepo;
-    }
+  @Autowired
+  public ProductService(ProductRepo productRepo) {
+    this.productRepo = productRepo;
+  }
 
-    public Product addProduct(Product product) {
-        return productRepo.save(product);
-    }
+  public Product addProduct(Product product) {
+    return productRepo.save(product);
+  }
 
-    public List<Product> findAllProducts() {
-        return productRepo.findAll();
-    }
+  public List<Product> findAllProducts() {
+    return productRepo.findAll();
+  }
 
-    public Product findProductById(Long id) {
-        return productRepo.findById(id).orElseThrow(() -> new ProductNotFoundException("Product by id: " + id + "was not found"));
-    }
+  public Product findProductById(Long id) {
+    return productRepo.findById(id).orElseThrow(() -> new ProductNotFoundException("Product by id: " + id + "was not found"));
+  }
 
-    public Product updateProduct(Product newProduct) {
-        return productRepo.save(newProduct);
-    }
+  public Product updateProduct(Product newProduct) {
+    return productRepo.save(newProduct);
+  }
 
-    public void deleteProduct(Long id) {
-        productRepo.deleteById(id);
-    }
+  public void deleteProduct(Long id) {
+    productRepo.deleteById(id);
+  }
 
-    //campaigns
+  //campaigns
 
   public Product addCampaignToProduct(Long productId, Campaign campaign) {
-      Product product = this.findProductById(productId);
-      campaign.setProduct(product);
-      product.assignCampaign(campaign);
-      return productRepo.save(product);
+    Product product = this.findProductById(productId);
+    campaign.setProduct(product);
+    product.assignCampaign(campaign);
+    return productRepo.save(product);
   }
 
   public List<Campaign> getCampaignsFromProduct(Long productId) {

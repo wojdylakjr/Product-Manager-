@@ -19,8 +19,8 @@ public class Product implements Serializable {
   private String imageURL;
 
   @JsonIgnore
-@OneToMany(mappedBy = "product",
-  cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "product",
+    cascade = CascadeType.ALL)
   private List<Campaign> campaigns = new ArrayList<>();
 
   public Product() {

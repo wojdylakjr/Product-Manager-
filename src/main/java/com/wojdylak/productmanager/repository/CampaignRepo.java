@@ -10,12 +10,12 @@ import java.util.Optional;
 
 @Repository
 public interface CampaignRepo extends JpaRepository<Campaign, Long> {
-    void deleteById(Long id);
+  void deleteById(Long id);
 
-    Optional<Campaign> findById(Long id);
+  Optional<Campaign> findById(Long id);
 
-    @Query("SELECT c FROM Campaign c WHERE c.product.productId = ?1")
-    List<Campaign> findByProductId(Long productId);
+  @Query("SELECT c FROM Campaign c WHERE c.product.productId = ?1")
+  List<Campaign> findByProductId(Long productId);
 
 //    @Query("SELECT c FROM Campaign c WHERE c.product.productId = ?2 and c.campaignId = ?1")
 //    Optional<Campaign> findCampaignByIdInProductId(Long id, Long productId);

@@ -25,7 +25,6 @@ public class CampaignController {
   }
 
 
-
   @RequestMapping("/campaigns")
   public ResponseEntity<List<Campaign>> getAllCampaigns() {
     List<Campaign> campaigns = campaignService.findAllCampaigns();
@@ -33,7 +32,7 @@ public class CampaignController {
   }
 
   @RequestMapping(method = RequestMethod.POST, value = "/campaigns")
-  public ResponseEntity<Campaign> addCampaign(@RequestBody Campaign campaign){
+  public ResponseEntity<Campaign> addCampaign(@RequestBody Campaign campaign) {
     Campaign newCampaign = campaignService.addCampaign(campaign);
     return new ResponseEntity<>(newCampaign, HttpStatus.CREATED);
   }
@@ -45,14 +44,14 @@ public class CampaignController {
   }
 
   @RequestMapping("/products/{productId}/campaigns/{campaignId}")
-  public ResponseEntity<Campaign> getCampaignByIdFromProduct(@PathVariable("campaignId") Long campaignId){
+  public ResponseEntity<Campaign> getCampaignByIdFromProduct(@PathVariable("campaignId") Long campaignId) {
     Campaign campaign = campaignService.findCampaignById(campaignId);
     return new ResponseEntity<>(campaign, HttpStatus.OK);
   }
 
 
   @RequestMapping(method = RequestMethod.PUT, value = "/products/{productId}/campaigns/{campaignId}")
-  public ResponseEntity<Campaign> updateCampaign(@RequestBody Campaign campaign, @PathVariable("campaignId")Long campaignId){
+  public ResponseEntity<Campaign> updateCampaign(@RequestBody Campaign campaign, @PathVariable("campaignId") Long campaignId) {
     Campaign updatedCampaign = campaignService.updateCampaign(campaign);
     return new ResponseEntity<>(updatedCampaign, HttpStatus.OK);
   }
